@@ -113,7 +113,7 @@ function expand(){
 
 }
 function AddText(e){
-    if(dblcl === 0) return;
+    if(dblcl !== 1) return;
     let newText = document.createElement('p')
     newText.style.position = 'absolute'
     newText.style.top = e.clientY
