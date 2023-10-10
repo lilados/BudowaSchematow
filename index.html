@@ -34,45 +34,62 @@
         </div>
     </div>
     <!--TODO: CENTER DLA IKON :))-->
-    <div id="ind">
+    <div id="ind" class="ind">
+        <div class="przycisk2" id="undoButton">
         <i class="material-icons" id="cofka" onmouseup="Undo()">
             undo
         </i>
+        </div>
+        <div class="przycisk2" >
         <i class="material-icons" id="stylDbl">
             open_with
         </i>
+        </div>
+        <div class="przycisk2">
         <i class="material-icons" id="stylPivot">
             vertical_align_center
         </i>
-
+        </div>
     </div>
 <!-- TODO: NAPISZ LADNY TEKST WEWNĄTRZ (FORMATOWANIE I POPRAWNA POLSZCZYZNA -->
     <div id="Tworzenie" class="WysOkna">
-    <div onmouseup="CreateElement('zrodloOgnia')">Źrodlo ciepla</div>
-    <div onmouseup="CreateElement('probowka')">probówke</div>
-    <div onmouseup="CreateElement('lyzka')">lyzke</div>
-    <div onmouseup="CreateElement('kolbaS')">kolbe S</div>
-    <div onmouseup="CreateElement('kolbaK')">kolbe K</div>
-    <div onmouseup="CreateElement('zlewka')">zlewke</div>
-    <div onmouseup="CreateElement('termometr')">termometr</div>
-    <div onmouseup="CreateElement('cylinder')">cylinder</div>
-    <div onmouseup="CreateElement('krystalizaor')">krystalizator</div>
-    <div onmouseup="CreateElement('mozdzierz')">mozdzierz</div>
-    <div onmouseup="CreateElement('pipeta')">pipete</div>
+    <div class="botak" onmouseup="CreateElement('zrodloOgnia')">Źródlo ciepła</div>
+    <div class="botak" onmouseup="CreateElement('probowka')">probówke</div>
+    <div class="botak" onmouseup="CreateElement('lyzka')">łyżka</div>
+    <div class="botak" onmouseup="CreateElement('kolbaS')">kolba S</div>
+    <div class="botak" onmouseup="CreateElement('kolbaK')">kolba K</div>
+    <div class="botak" onmouseup="CreateElement('zlewka')">zlewka</div>
+    <div class="botak" onmouseup="CreateElement('termometr')">termometr</div>
+    <div class="botak" onmouseup="CreateElement('cylinder')">cylinder</div>
+    <div class="botak" onmouseup="CreateElement('krystalizaor')">krystalizator</div>
+    <div class="botak" onmouseup="CreateElement('mozdzierz')">moździerz</div>
+    <div class="botak" onmouseup="CreateElement('pipeta')">pipeta</div>
     </div>
     <div id="Opis" class="WysOkna">
         <div>
-            hekosadjiawjda
+            Dodaj narzędzia klikając na nazwę, następnie zablokuj w miejscu klikając scroll. Dodaj strzałki oraz nazwy zmieniając tryb myszki (domyślnie Q). Narysowane kreski można cofnąć.
         </div>
     </div>
     <div id="Konf" class="WysOkna">
         <div>
-            Klawisz usuwania<input id="del" type="text" maxlength="1" onchange="Configurate('del', this.value)">
+            Klawisz usuwania<input id="del" type="text" maxlength="1" onchange="Configurate('del', this.value)"><br>
             Klawisz odniesienia<input id="piv"type="text" maxlength="1" onchange="Configurate('piv', this.value)"> <br>
-            Klawisz trybu myszki<input id="mode" type="text" maxlength="1" onchange="Configurate('mode', this.value)">
-            Klawisz cofnij<input type="text" id="undo" maxlength="1" onchange="Configurate('undo', this.value)">
+            Klawisz trybu myszki<br><input id="mode" type="text" maxlength="1" onchange="Configurate('mode', this.value)"><br>
+            Klawisz cofnij<br><input type="text" id="undo" maxlength="1" onchange="Configurate('undo', this.value)"><br>
         </div>
     </div>
-    <script src="script.js"></script>
+
+    <canvas id="myCanvas" width="1800" height="725"></canvas>
+    <footer>
+        Strona stworzona przez : Adam Bukowski i Rafał Delekta
+    </footer>
+    
+    
+        
+
+    <script src="script.js">
+        
+    </script>
+    
 </body>
 </html>

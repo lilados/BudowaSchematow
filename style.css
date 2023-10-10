@@ -17,10 +17,12 @@ body>div{
     display: none;
     width: 100px;
     float: left;
+    font-family: Verdana;
 }
 #Tworzenie>div{
     padding: 8px;
-    text-align: center;
+    padding-left: 0;
+    text-align: left;
 }
 #Konf>div>input{
     width: 30px;
@@ -88,7 +90,26 @@ body>div{
     font-size: 40px;
     color: #30bdf2;
 } 
+.ind>.przycisk2{
+    display: flex;
+    background-color: white;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #b2b2b2;
+}
+.przycisk2{
+    width: 100px;
+}
+.przycisk2>.material-icons{
+    font-size: 30px;
+}
 
+#undoButton:hover>.material-icons{
+    font-size: 40px;
+    color: #30bdf2;
+} 
 #cos{
     width: 300px;
     position: absolute;
@@ -100,16 +121,20 @@ body>div{
 
 canvas {
     border: 1px solid black;
-    margin-left: auto;
+    margin-left: 100;
     margin-right: 0;
-    margin-top: 10px;
+    
     display: block;
     position: flex;
 }
 
+footer{
+    margin-top: 10px;
+    text-align: center;
+    font-size: 36;
+}
 
-#undoButton {
-    width: 40px;
-    height: 40px;
-    background-color: black;
-} 
+.botak{
+    border-bottom: 1px solid  #30bdf2;
+    text-transform: capitalize;
+}

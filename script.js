@@ -59,7 +59,10 @@ function StopMoving(e) {
             case 1: document.getElementById("stylPivot").innerText = 'vertical_align_center'; break;
             case 2: document.getElementById("stylPivot").innerText = 'vertical_align_top'; break;
         }
+    }else if(e.code === KeyUndo){
+        undo()
     }
+
     if(wybrany == null) {
 
     }else if(e.button === 1 || e.ctrlKey) {
@@ -115,6 +118,9 @@ function AddText(e){
     newText.style.position = 'absolute'
     newText.style.top = e.clientY
     newText.style.left = e.clientX
+    newText.style.fontSize = '20pt'
+    newText.style.fontFamily = 'Verdana'
+    newText.style.textTransform = 'Capitalize'
     newText.addEventListener('dblclick', function (){if(dblcl === 0)newText.remove()})
     newText.innerText = prompt('Podaj tekst')
     if(newText.innerText === "") return
@@ -132,10 +138,75 @@ function ToggleVisibility(id){
     elem === 'block' ?(document.getElementById(id).style.display = 'none', idOkna = ""):
     (document.getElementById(id).style.display = 'block', oknoState = true)
 }
+        
+        const canvas = document.getElementById('myCanvas');
+        const context = canvas.getContext('2d');
+        const lines = [];
+        const drawnLines = [];
 
-let linie = []
+        let isDrawing = false;
+        let startCoords = { x: 0, y: 0 };
+        
+        function startDrawing(event) {
+            if(dblcl == 2){ 
+            isDrawing = true;
+            // Pobierz początkowe współrzędne po kliknięciu myszką
+            startCoords.x = event.clientX - canvas.offsetLeft;
+            startCoords.y = event.clientY - canvas.offsetTop;
+            }
+        }
 
-function Undo(){
+        function stopDrawing(event) {
+            if(dblcl == 2){
+            if (isDrawing){
+                // Pobierz końcowe współrzędne po puściu przycisku myszy
+                const endCoords = { x: event.clientX - canvas.offsetLeft, y: event.clientY - canvas.offsetTop };
 
-}
+                // Narysuj linię od początkowych do końcowych współrzędnych
+                context.beginPath();
+                context.moveTo(startCoords.x, startCoords.y);
+                context.lineTo(endCoords.x, endCoords.y);
+                context.strokeStyle = 'black';
+                context.lineWidth = 2;
+                context.stroke();
 
+                // Dodaj linię do tablicy lines
+                lines.push({ startX: startCoords.x, startY: startCoords.y, endX: endCoords.x, endY: endCoords.y });
+                drawnLines.push({ startX: startCoords.x, startY: startCoords.y, endX: endCoords.x, endY: endCoords.y });
+
+                isDrawing = false;
+            }
+            }
+        }
+
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mouseup', stopDrawing);
+
+        function undo() {
+            if (drawnLines.length > 0) {
+                // Usuń ostatnią narysowaną linię z płótna
+                const lastLine = drawnLines.pop();
+                clearCanvas();
+                // Narysuj wszystkie linie z tablicy drawnLines ponownie
+                for (const line of drawnLines) {
+                    context.beginPath();
+                    context.moveTo(line.startX, line.startY);
+                    context.lineTo(line.endX, line.endY);
+                    context.strokeStyle = 'black';
+                    context.lineWidth = 2;
+                    context.stroke();
+                }
+                // Usuń ostatnią linię z tablicy lines
+                lines.pop();
+            }
+        }
+
+        // Nasłuch na kliknięcie przycisku "Cofnij"
+        const undoButton = document.getElementById('undoButton');
+        undoButton.addEventListener('click', undo);
+
+        // Funkcja do wyczyszczenia płótna
+        function clearCanvas() {
+            context.clearRect(0, 0, canvas.width, canvas.height);
+        }
+        
