@@ -1,5 +1,13 @@
 body{
     background-color: #c0c0c0;
+    padding: 0;
+    margin: 0;
+    
+    
+    transition: 1s;
+    
+    cursor: pointer;
+
 }
 
 body>div{
@@ -7,3 +15,52 @@ body>div{
     width: 8%;
     margin-bottom: 4px;
 }
+
+#cos{
+    display: none;
+}
+
+.menu{
+    display: flex;
+    position: relative;
+}
+
+.toggle{
+    background-color: #30bdf2;
+    height: 80px;
+    width: 80px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.toggle>.material-icons{
+    font-size: 60px;
+}
+
+.items{
+    display: flex;
+    flex-direction: row;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.5s;
+}
+
+.items>.przycisk{
+    display: flex;
+    background-color: white;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #b2b2b2;
+}
+.przycisk>.material-icons{
+    font-size: 30px;
+}
+
+.przycisk:hover>.material-icons{
+    font-size: 40px;
+    color: #30bdf2;
+}   

@@ -55,6 +55,22 @@ function MoveElement(event){
     wybrany.style.zIndex = 1080 - event.clientY;
 }
 
-
-
+        let state = false;
+        function expand(){
+            if(state==false){
+                document.getElementById("items").style.transform='scaleX(1)';
+                document.getElementById("toggle").style.transform='rotate(45deg)';
+                state=true;
+            }else{
+                document.getElementById("items").style.transform='scaleX(0)';
+                document.getElementById("toggle").style.transform='rotate(0deg)';
+                state=false;
+            }
+            
+        }
+    
+    
+        function jebacdisa(){
+            document.getElementById(`cos`).style.display == 'block'?document.getElementById(`cos`).style.display = 'none':document.getElementById(`cos`).style.display = 'block'
+        }
 

@@ -4,21 +4,55 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Wyposażenie Pracowni</title>
 </head>
 <body id="hej">
-    <div onmouseup="CreateElement('zrodloOgnia')">Stworz Źrodlo ciepla</div>
-    <div onmouseup="CreateElement('probowka')">Stworz probówke</div>
-    <div onmouseup="CreateElement('lyzka')">Stworz lyzke</div>
-    <div onmouseup="CreateElement('kolbaS')">Stworz kolbe S</div>
-    <div onmouseup="CreateElement('kolbaK')">Stworz kolbe K</div>
-    <div onmouseup="CreateElement('zlewka')">Stworz zlewke</div>
-    <div onmouseup="CreateElement('termometr')">Stworz termometr</div>
-    <div onmouseup="CreateElement('cylinder')">Stworz cylinder</div>
-    <div onmouseup="CreateElement('krystalizaor')">Stworz krystalizator</div>
-    <div onmouseup="CreateElement('mozdzierz')">Stworz mozdzierz</div>
-    <div onmouseup="CreateElement('pipeta')">Stworz pipete</div>
+
+    <div class="menu">
+        <div class="toggle" onclick="expand()">
+            <i class="material-icons" id="toggle">
+                add 
+            </i>
+        </div>
+        <div class="items" id="items" >
+            <div class="przycisk" onmouseup="jebacdisa()">
+    <i class="material-icons">
+                    border_color
+                </i>
+            </div>
+            <div class="przycisk">
+                <i class="material-icons">
+                    border_color
+                </i>
+            </div>
+            <div class="przycisk">
+                <i class="material-icons">
+                    border_color
+                </i>
+            </div>
+        </div>
+    </div>
+
+    <div id="cos">
+    <div onmouseup="CreateElement('zrodloOgnia')" class="costamrobixpip">Stworz Źrodlo ciepla</div>
+    <div onmouseup="CreateElement('probowka')" class="costamrobixpip">Stworz probówke</div>
+    <div onmouseup="CreateElement('lyzka')" class="costamrobixpip">Stworz lyzke</div>
+    <div onmouseup="CreateElement('kolbaS')" class="costamrobixpip">Stworz kolbe S</div>
+    <div onmouseup="CreateElement('kolbaK')" class="costamrobixpip">Stworz kolbe K</div>
+    <div onmouseup="CreateElement('zlewka')" class="costamrobixpip">Stworz zlewke</div>
+    <div onmouseup="CreateElement('termometr')" class="costamrobixpip">Stworz termometr</div>
+    <div onmouseup="CreateElement('cylinder')" class="costamrobixpip">Stworz cylinder</div>
+    <div onmouseup="CreateElement('krystalizaor')" class="costamrobixpip">Stworz krystalizator</div>
+    <div onmouseup="CreateElement('mozdzierz')" class="costamrobixpip">Stworz mozdzierz</div>
+    <div onmouseup="CreateElement('pipeta')" class="costamrobixpip">Stworz pipete</div>
+    </div>
     <script src="script.js"></script>
+
+    
+    
+    
+
 </body>
 </html>
