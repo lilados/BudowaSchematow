@@ -2,8 +2,7 @@ body{
     background-color: #c0c0c0;
     padding: 0;
     margin: 0;
-    
-    
+
     transition: 1s;
     
     cursor: pointer;
@@ -12,23 +11,45 @@ body{
 
 body>div{
     background-color: white;
-    width: 8%;
-    margin-bottom: 4px;
 }
 
-#cos{
+.WysOkna{
     display: none;
+    width: 100px;
+    float: left;
+}
+#Tworzenie>div{
+    padding: 8px;
+    text-align: center;
+}
+#Konf>div>input{
+    width: 30px;
+}
+#ind{
+    display: flex;
+    width: 300px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+#ind>i{
+    width: 100px;
+    height: 100px;
 }
 
 .menu{
+    background-color: #c0c0c0;
     display: flex;
     position: relative;
+    width: 400px;
+    height: 100px;
+    transition: 0.5s;
 }
 
 .toggle{
     background-color: #30bdf2;
-    height: 80px;
-    width: 80px;
+    width: 25%;
     color: white;
     display: flex;
     justify-content: center;
@@ -44,17 +65,20 @@ body>div{
     transform: scaleX(0);
     transform-origin: left;
     transition: 0.5s;
+    height: 100px;
 }
 
 .items>.przycisk{
     display: flex;
     background-color: white;
-    height: 80px;
-    width: 80px;
+    width: 100px;
     justify-content: center;
     align-items: center;
     text-decoration: none;
     color: #b2b2b2;
+}
+.przycisk{
+    width: 100px;
 }
 .przycisk>.material-icons{
     font-size: 30px;
