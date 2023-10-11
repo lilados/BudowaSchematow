@@ -15,11 +15,13 @@ let KeyMode = "KeyQ"
 let KeyUndo = "KeyE"
 
 function Configurate(nazwa_klucza, wartosc){
+    let Nazwa = wartosc.ToUpperCase()
+    
     switch (nazwa_klucza){
-        case 'del': KeyDelete = `Key${String.ToUpperCase(wartosc)}`; break
-        case 'piv': KeyPivot = `Key${String.ToUpperCase(wartosc)}`; break
-        case 'mode': KeyMode = `Key${String.ToUpperCase(wartosc)}`; break
-        case 'undo': KeyUndo = `Key${String.ToUpperCase(wartosc)}`; break
+        case 'del': KeyDelete = `Key${Nazwa}`; break
+        case 'piv': KeyPivot = `Key${Nazwa}`; break
+        case 'mode': KeyMode = `Key${Nazwa}`; break
+        case 'undo': KeyUndo = `Key${Nazwa}`; break
     }
 }
 
