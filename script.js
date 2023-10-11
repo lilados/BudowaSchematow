@@ -16,7 +16,7 @@ let KeyUndo = "KeyE"
 
 function Configurate(nazwa_klucza, wartosc){
     let Nazwa = ""
-    Nazwa = name.toUpperCase()
+    Nazwa = wartosc.toUpperCase()
     
     switch (nazwa_klucza){
         case 'del': KeyDelete = `Key${Nazwa}`; break
