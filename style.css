@@ -140,3 +140,20 @@ footer{
     border-bottom: 1px solid  #30bdf2;
     text-transform: capitalize;
 }
+
+#opis{
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    width: 700px;
+    height: 230px;
+    left: 640px;
+    top: 300px;
+    text-align: center;
+    font-family: Verdana;
+    font-size: 18pt;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
