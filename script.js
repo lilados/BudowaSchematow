@@ -1,7 +1,6 @@
 let listaElementow = []
 let h = true
 let wybrany = null;
-
 let clc = false
 
 let pivot = 1
@@ -115,6 +114,7 @@ function expand(){
     }
 
 }
+let edytowanoTekst = false
 function AddText(e){
     if(dblcl !== 1) return;
     let newText = document.createElement('p')
@@ -124,9 +124,15 @@ function AddText(e){
     newText.style.fontSize = '20pt'
     newText.style.fontFamily = 'Verdana'
     newText.style.textTransform = 'Capitalize'
-    newText.addEventListener('dblclick', function (){if(dblcl === 0)newText.remove()})
-    newText.innerText = prompt('Podaj tekst')
-    if(newText.innerText === "") return
+    newText.addEventListener('dblclick', function (){
+        if(dblcl === 0)newText.remove()
+        else if(dblcl === 1){edytowanoTekst = true; newText.innerText = prompt(`Zmień tekst ${newText.innerText}`)}
+    })
+    if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
+
+    if(newText.innerText === "")return
+
+    edytowanoTekst = false
     document.body.appendChild(newText)
 }
 
@@ -151,7 +157,7 @@ function ToggleVisibility(id){
         let startCoords = { x: 0, y: 0 };
         
         function startDrawing(event) {
-            if(dblcl == 2){ 
+            if(dblcl === 2){
             isDrawing = true;
             // Pobierz początkowe współrzędne po kliknięciu myszką
             startCoords.x = event.clientX - canvas.offsetLeft;
@@ -160,7 +166,7 @@ function ToggleVisibility(id){
         }
 
         function stopDrawing(event) {
-            if(dblcl == 2){
+            if(dblcl === 2){
             if (isDrawing){
                 // Pobierz końcowe współrzędne po puściu przycisku myszy
                 const endCoords = { x: event.clientX - canvas.offsetLeft, y: event.clientY - canvas.offsetTop };

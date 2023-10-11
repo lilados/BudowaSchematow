@@ -12,12 +12,14 @@ body{
 body>div{
     background-color: white;
 }
-
+body>p{
+    margin: 0;
+}
 .WysOkna{
     display: none;
     width: 100px;
     float: left;
-    font-family: Verdana;
+    font-family: Verdana, serif;
 }
 #Tworzenie>div{
     padding: 8px;
