@@ -16,10 +16,10 @@ let KeyUndo = "KeyE"
 
 function Configurate(nazwa_klucza, wartosc){
     switch (nazwa_klucza){
-        case 'del': KeyDelete = `Key${wartosc}`; break
-        case 'piv': KeyPivot = `Key${wartosc}`; break
-        case 'mode': KeyMode = `Key${wartosc}`; break
-        case 'undo': KeyUndo = `Key${wartosc}`; break
+        case 'del': KeyDelete = `Key${wartosc.ToUpperCase()}`; break
+        case 'piv': KeyPivot = `Key${wartosc.ToUpperCase()}`; break
+        case 'mode': KeyMode = `Key${wartosc.ToUpperCase()}`; break
+        case 'undo': KeyUndo = `Key${wartosc.ToUpperCase()}`; break
     }
 }
 
