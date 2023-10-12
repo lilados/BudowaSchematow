@@ -129,10 +129,10 @@ function AddText(e){
         else if(dblcl === 1){edytowanoTekst = true; newText.innerText = prompt(`Zmień tekst ${newText.innerText}`)}
     })
     if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
+    edytowanoTekst = false
 
     if(newText.innerText === "")return
 
-    edytowanoTekst = false
     document.body.appendChild(newText)
 }
 
