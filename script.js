@@ -129,14 +129,17 @@ function AddText(e){
     if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
     newText.style.width = '100%'
     newText.style.height = '100%'
-    
+    const pText = newText
     switch(pivot){
-        case 0: newText.style.top = e.clientY + newText.style.height/2
-        newText.style.left = e.clientX; break
-        case 1: newText.style.top = e.clientY + newText.style.height/2
-        newText.style.left = e.clientX + newText.style.width/2; break
-        case 2: newText.style.top = e.clientY + newText.style.height/2
-        newText.style.left = e.clientX + newText.style.width; break
+        case 0: newText.style.top = e.clientY + pText.offsetHeight/2
+        newText.style.left = e.clientX;
+        console.log(`dzialaj pls`); break
+        case 1: newText.style.top = e.clientY + pText.offsetHeight/2
+        newText.style.left = e.clientX + pText.offsetWidth/2;
+        console.log(`dzialaj pls`); break
+        case 2: newText.style.top = e.clientY + pText.offsetHeight/2
+        newText.style.left = e.clientX + pText.offsetWidth;
+        console.log(`dzialaj pls`); break
     }
     edytowanoTekst = false
 
