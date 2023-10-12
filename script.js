@@ -132,13 +132,13 @@ function AddText(e){
     switch(pivot){
         case 0: newText.style.top = e.clientY + newText.offsetHeight/2
         newText.style.left = e.clientX;
-        console.log(`dzialaj pls3`); break
+        console.log(`dzialaj pls4`); break
         case 1: newText.style.top = e.clientY + newText.offsetHeight/2
         newText.style.left = e.clientX + newText.offsetWidth/2;
-        console.log(`dzialaj pls3`); break
+        console.log(`dzialaj pls4`); break
         case 2: newText.style.top = e.clientY + newText.offsetHeight/2
         newText.style.left = e.clientX + newText.offsetWidth;
-        console.log(`dzialaj pls3`); break
+        console.log(`dzialaj pls4`); break
     }
     edytowanoTekst = false
 
