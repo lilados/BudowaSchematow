@@ -128,16 +128,16 @@ function AddText(e){
     })
     if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
     
-    const pText = document.getElementsByName('p');
+    
     switch(pivot){
-        case 0: newText.style.top = e.clientY + getElementsByName('p').offsetHeight/2
+        case 0: newText.style.top = e.clientY + newText.offsetHeight/2
         newText.style.left = e.clientX;
         console.log(`dzialaj pls3`); break
-        case 1: newText.style.top = e.clientY + getElementsByName('p').offsetHeight/2
-        newText.style.left = e.clientX + getElementsByName('p').offsetWidth/2;
+        case 1: newText.style.top = e.clientY + newText.offsetHeight/2
+        newText.style.left = e.clientX + newText.offsetWidth/2;
         console.log(`dzialaj pls3`); break
-        case 2: newText.style.top = e.clientY + getElementsByName('p').offsetHeight/2
-        newText.style.left = e.clientX + getElementsByName('p').offsetWidth;
+        case 2: newText.style.top = e.clientY + newText.offsetHeight/2
+        newText.style.left = e.clientX + newText.offsetWidth;
         console.log(`dzialaj pls3`); break
     }
     edytowanoTekst = false
