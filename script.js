@@ -119,8 +119,6 @@ function AddText(e){
     if(dblcl !== 1) return;
     let newText = document.createElement('p')
     newText.style.position = 'absolute'
-    newText.style.top = e.clientY
-    newText.style.left = e.clientX
     newText.style.fontSize = '20pt'
     newText.style.fontFamily = 'Verdana'
     newText.style.textTransform = 'Capitalize'
@@ -129,6 +127,17 @@ function AddText(e){
         else if(dblcl === 1){edytowanoTekst = true; newText.innerText = prompt(`Zmień tekst ${newText.innerText}`)}
     })
     if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
+    newText.style.width = '100%'
+    newText.style.height = '100%'
+    
+    switch(pivot){
+        case 0: newText.style.top = e.clientY + newText.style.height/2
+        newText.style.left = e.clientX; break
+        case 1: newText.style.top = e.clientY + newText.style.height/2
+        newText.style.left = e.clientX + newText.style.width/2; break
+        case 2: newText.style.top = e.clientY + newText.style.height/2
+        newText.style.left = e.clientX + newText.style.width; break
+    }
     edytowanoTekst = false
 
     if(newText.innerText === "")return
