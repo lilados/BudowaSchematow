@@ -127,8 +127,7 @@ function AddText(e){
         else if(dblcl === 1){edytowanoTekst = true; newText.innerText = prompt(`Zmień tekst ${newText.innerText}`)}
     })
     if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
-    newText.style.width = '100%'
-    newText.style.height = '100%'
+    
     const pText = newText
     switch(pivot){
         case 0: newText.style.top = e.clientY + pText.offsetHeight/2
