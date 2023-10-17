@@ -12,6 +12,7 @@ let KeyDelete = "KeyX"
 let KeyPivot = "KeyZ"
 let KeyMode = "KeyQ"
 let KeyUndo = "KeyE"
+let Indexowe = ["{", "}"]
 
 function Configurate(nazwa_klucza, wartosc){
     let Nazwa = ""
@@ -22,6 +23,7 @@ function Configurate(nazwa_klucza, wartosc){
         case 'piv': KeyPivot = `Key${Nazwa}`; break
         case 'mode': KeyMode = `Key${Nazwa}`; break
         case 'undo': KeyUndo = `Key${Nazwa}`; break
+        case 'index': Indexowe[0] = wartosc[0], Indexowe[1] = wartosc[1]; break
     }
 }
 
@@ -124,29 +126,63 @@ function AddText(e){
     newText.style.textTransform = 'Capitalize'
     newText.addEventListener('dblclick', function (){
         if(dblcl === 0)newText.remove()
-        else if(dblcl === 1){edytowanoTekst = true; newText.innerText = prompt(`Zmień tekst ${newText.innerText}`)}
+        else if(dblcl === 1){edytowanoTekst = true; newText.innerText = formatTekstu(prompt(`Zmień tekst ${newText.innerText}`))}
     })
+
     if(!edytowanoTekst)newText.innerText = prompt('Podaj tekst')
-    
-    
-    switch(pivot){
-        case 0: newText.style.top = e.clientY + newText.offsetHeight/2
-        newText.style.left = e.clientX;
-        console.log(`dzialaj pls4`); break
-        case 1: newText.style.top = e.clientY + newText.offsetHeight/2
-        newText.style.left = e.clientX + newText.offsetWidth/2;
-        console.log(`dzialaj pls4`); break
-        case 2: newText.style.top = e.clientY + newText.offsetHeight/2
-        newText.style.left = e.clientX + newText.offsetWidth;
-        console.log(`dzialaj pls4`); break
-    }
+
+    newText.innerHTML = formatTekstu(newText.innerHTML)
+    newText.style.textTransform = 'capitalize'
+    newText.style.height = "1em"
+
     edytowanoTekst = false
 
     if(newText.innerText === "")return
 
     document.body.appendChild(newText)
+    switch(pivot){
+        case 0: newText.style.top = e.clientY - newText.clientHeight/2
+            newText.style.left = e.clientX;break
+        case 1: newText.style.top = e.clientY - newText.clientHeight/2
+            newText.style.left = e.clientX - newText.clientWidth/2;break
+        case 2: newText.style.top = e.clientY - newText.clientHeight/2
+            newText.style.left = e.clientX - newText.clientWidth;break
+    }
 }
 
+function formatTekstu(str){
+    let strBuilder = ""
+    let Format = false
+    let i = 0
+    while(i < str.length){
+        if(str[i] !== Indexowe[0] && !Format) {
+            strBuilder += str[i]
+        }else if(str[i] === Indexowe[0]){
+            Format = true
+            for (let j = 0; j < str.length - i; j++) {
+                if(str[j+i] === Indexowe[1]){
+                    switch (str[i+1]){
+                        case 'u': strBuilder += `<sup>${str.substring(i+2, i+j)}</sup>`
+                            break
+                        case 'g': strBuilder += `<sup>${str.substring(i+2, i+j)}</sup>`
+                            break
+                        case 'b': strBuilder += `<sub>${str.substring(i+2, i+j)}</sub>`
+                            break
+                        case 'd': strBuilder += `<sub>${str.substring(i+2, i+j)}</sub>`
+                            break
+                    }
+                    i += j
+                    Format = false
+                    break
+                }
+            }
+        }
+
+        i++
+    }
+
+    return strBuilder
+}
 function ToggleVisibility(id){
     if(wybrany != null)wybrany.remove()
 

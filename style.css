@@ -145,15 +145,33 @@ footer{
     justify-content: center;
     align-items: center;
     position: absolute;
-    z-index: 100;
-    width: 700px;
-    height: 230px;
-    left: 640px;
-    top: 300px;
+    z-index: 2000;
+    width: 1720px;
+    height: 725px;
+    left: 101px;
+    top: 101px;
     text-align: center;
     font-family: Verdana;
     font-size: 18pt;
-    padding-top: 20px;
-    padding-left: 10px;
-    padding-right: 10px;
+
+}
+.opisy{
+    border: 3px #30bdf2 solid;
+    z-index: auto;
+    justify-content: center;
+    align-items: center;
+}
+.opisy>.material-icons{
+    color: #b2b2b2;
+}
+#opis>.opisy{
+    float: left;
+    width: 567px;
+    margin: 0;
+    padding: auto;
+    height: 719px;
+}
+
+#opis3{
+    clear: both;
 }
